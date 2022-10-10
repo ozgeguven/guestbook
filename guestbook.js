@@ -77,11 +77,11 @@ const guestbook = {
     loadEntries();
     $.ajax({
       type: 'GET',
-      url: `https://kredimoltest.aljfinans.com/api/settings/IsForceUpdate?version=2.8.0`,
+      url: `https://kredimoltest.aljfinans.com/api/settings/GetALJContactInfo`,
       dataType: 'json'
     }).done(function(result){
       console.log(result);
-    $("#myinfo").html("result.resultData");
+    $("#myinfo").html(result.resultData.adress);
     });
   });
 })();

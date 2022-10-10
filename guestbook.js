@@ -75,5 +75,13 @@ const guestbook = {
   $(document).ready(function() {
     prepareTemplates();
     loadEntries();
+    $.ajax({
+      type: 'GET',
+      url: `https://kredimoltest.aljfinans.com/api/settings/IsForceUpdate?version=2.8.0`,
+      dataType: 'json'
+    }).done(function(result){
+      console.log(result);
+    $("#myinfo").html("result.resultData");
+    });
   });
 })();
